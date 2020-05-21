@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/tomugon/.config/nvim'
+let g:netrw_dirhist_4='/Users/tomugon/.config'
+let g:netrw_dirhist_3='/Users/tomugon'
+let g:netrw_dirhist_2='/Users'
+let g:netrw_dirhist_1='/Users/tomugon'
+let g:netrw_dirhist_0='/Users'
+let g:netrw_dirhist_9='/Users/tomugon'
+let g:netrw_dirhist_8='/Users/tomugon/zori-landing-page/src/screens'
+let g:netrw_dirhist_7='/Users/tomugon/zori-landing-page/src'
+let g:netrw_dirhist_6='/Users/tomugon/zori-landing-page'

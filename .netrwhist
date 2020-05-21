@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/tomugon/zori-landing-page/src'
+let g:netrw_dirhist_6='/Users/tomugon/zori-landing-page/src/screens'
+let g:netrw_dirhist_5='/Users/tomugon/zori-landing-page/src'
+let g:netrw_dirhist_4='/Users/tomugon/zori-landing-page/src/screens'
+let g:netrw_dirhist_3='/Users/tomugon/zori-landing-page/src/components'
+let g:netrw_dirhist_2='/Users/tomugon/zori-landing-page/src'
+let g:netrw_dirhist_1='/Users/tomugon/zori-landing-page/src/screens'
+let g:netrw_dirhist_0='/Users/tomugon/zori-landing-page/src'
+let g:netrw_dirhist_9='/Users/tomugon/zori-landing-page'
+let g:netrw_dirhist_8='/Users/tomugon/zori-landing-page/src/screens'

@@ -1,0 +1,53 @@
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 2
+
+set number
+set guicursor=a:blinkon100
+autocmd BufWritePre *.js Neoformat
+
+au InsertEnter * silent execute "!echo -en \<esc>[5 q"
+au InsertLeave * silent execute "!echo -en \<esc>[2 q"
+
+autocmd InsertEnter * : silent exec "!printf '\033]50;CursorShape=2\x7'" | exec ":redraw!"
+autocmd InsertLeave * : silent exec "!printf '\033]50;CursorShape=0\x7'" | exec ":redraw!"
+
+
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+
+
+call plug#begin('~/.local/share/nvim/plugged')
+
+  if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+  endif
+  
+  Plug 'vheon/vim-cursormode'
+
+  Plug 'dense-analysis/ale'
+  Plug 'sbdchd/neoformat'
+  Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+  Plug 'sheerun/vim-polyglot'
+  Plug 'dracula/vim', { 'as': 'dracula' }
+
+call plug#end()
+
+colorscheme dracula
+let g:deoplete#enable_at_startup = 1
+
+"Cursor settings:
+
+"  1 -> blinking block
+"  2 -> solid block 
+"  3 -> blinking underscore
+"  4 -> solid underscore
+"  5 -> blinking vertical bar
+"  6 -> solid vertical bar
