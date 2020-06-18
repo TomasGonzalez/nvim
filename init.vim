@@ -4,8 +4,6 @@ set expandtab
 set nowrap
 set number
 
-autocmd BufWritePre *.js Neoformat
-
 
 "set cursor settings
 set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
@@ -21,10 +19,15 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
   endif
-  
+
+  "Prettier and formaters
+  Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+ 
+
+  "I dont remember what is this.. let's let it be..
   Plug 'dense-analysis/ale'
-  Plug 'sbdchd/neoformat'
-  Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
   
   "Syntax support
   Plug 'sheerun/vim-polyglot'
@@ -50,7 +53,7 @@ let g:deoplete#enable_at_startup = 1
 "map nerdTree to CTRL n
 map <C-n> :NERDTreeToggle<CR>
 
-"set up prettier so auto run on save
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+"prettier config
+let g:prettier#quickfix_enabled = 0
 
+autocmd BufWritePost *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
